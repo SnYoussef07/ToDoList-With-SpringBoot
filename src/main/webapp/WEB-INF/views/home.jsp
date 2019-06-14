@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>Hello App</h1>
+	<h1>Liste des taches a effectuées :</h1>
+	<p>${list }</p>
 </body>
 </html>
