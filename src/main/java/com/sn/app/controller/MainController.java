@@ -38,4 +38,13 @@ public class MainController {
 
 		return "redirect:/";
 	}
+
+	@GetMapping("/delete-task")
+	public String deleteTask(@RequestParam Long id) {
+
+		repo.deleteById(id);
+		
+		
+		return "redirect:/";
+	}
 }

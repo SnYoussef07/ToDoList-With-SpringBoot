@@ -55,6 +55,14 @@ public class Task implements java.io.Serializable {
 		return contents;
 	}
 
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
 	public void setContents(String contents) {
 		this.contents = contents;
 	}

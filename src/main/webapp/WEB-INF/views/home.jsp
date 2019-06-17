@@ -14,13 +14,14 @@
 <body>
 
 
-	<div class="container my-5 border p-5 shadow-sm rounded">
+	<div class="container-fluid my-5 border p-5 shadow-sm rounded bg-light">
 		<div class="row mt-5">
 			<div class="col-3 mt-5 border-right border-dark">
 				<h4>Ajouter une Tache</h4>
 				<form action="/" method="POST">
 					<div class="form-group">
-						<input type="text" name="content" class="form-control" id="taskl">
+						<input type="text" name="content" class="form-control"
+							required="required">
 					</div>
 					<button type="submit" class="btn btn-primary">Ajouter</button>
 				</form>
@@ -41,6 +42,9 @@
 								<td>${task.contents }</td>
 								<td>${task.targetDate }</td>
 								<td>${task.done }</td>
+								<td><a href="/delete-task?id=${task.id}"
+									class="btn btn-danger">Supprimer</a></td>
+
 							</tr>
 						</c:forEach>
 					</tbody>
