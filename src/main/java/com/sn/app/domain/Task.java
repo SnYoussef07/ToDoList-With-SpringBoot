@@ -6,6 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Task implements java.io.Serializable {
@@ -19,6 +20,7 @@ public class Task implements java.io.Serializable {
 	@Id
 	private Long id;
 	private String user;
+
 	@Column(columnDefinition = "TEXT")
 	private String contents;
 	private Date targetDate;

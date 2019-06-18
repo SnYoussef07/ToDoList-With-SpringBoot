@@ -20,10 +20,6 @@ public class MainController {
 
 	@GetMapping("/")
 	public String home(Model model) {
-		/*
-		 * Task dd = repo.save(new Task("admin", "content test", new Date(), false));
-		 * Task dd2 = repo.save(new Task("lol", "content test", new Date(), false));
-		 */
 
 		model.addAttribute("list", repo.findByUser("admin"));
 
@@ -32,8 +28,7 @@ public class MainController {
 
 	@PostMapping("/")
 	public String homeSubmit(@RequestParam String content) {
-		// Task dd = repo.save(new Task("admin", "content test", new Date(), false));
-		// Task dd2 = repo.save(new Task("lol", "content test", new Date(), false));
+
 		repo.save(new Task("admin", content, new Date(), false));
 
 		return "redirect:/";
@@ -43,8 +38,19 @@ public class MainController {
 	public String deleteTask(@RequestParam Long id) {
 
 		repo.deleteById(id);
-		
-		
+
 		return "redirect:/";
+	}
+
+	@PostMapping("/update-task")
+	public String updateTask(@RequestParam Long id, @RequestParam String content) {
+
+		Task task = repo.findById(id).get();
+		task.setContents(content);
+
+		repo.save(task);
+
+		return "redirect:/";
+
 	}
 }
