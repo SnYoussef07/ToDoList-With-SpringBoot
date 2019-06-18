@@ -47,6 +47,7 @@ public class MainController {
 
 		Task task = repo.findById(id).get();
 		task.setContents(content);
+		task.setTargetDate(new Date());
 
 		repo.save(task);
 
