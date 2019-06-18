@@ -42,6 +42,16 @@ public class MainController {
 		return "redirect:/";
 	}
 
+	@GetMapping("/done-task")
+	public String doneTask(@RequestParam Long id) {
+
+		Task task = repo.findById(id).get();
+		task.switchDone();
+		repo.save(task);
+
+		return "redirect:/";
+	}
+
 	@PostMapping("/update-task")
 	public String updateTask(@RequestParam Long id, @RequestParam String content) {
 

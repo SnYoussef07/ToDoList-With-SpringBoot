@@ -85,4 +85,8 @@ public class Task implements java.io.Serializable {
 		this.done = done;
 	}
 
+	public void switchDone() {
+		this.done = !this.done;
+	}
+
 }

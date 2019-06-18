@@ -43,12 +43,13 @@
 					</thead>
 					<tbody>
 						<c:forEach items="${list }" var="task">
-							<tr>
+							<tr class="${task.done ? "bg-success" : "" }">
 								<td>${task.contents }</td>
 								<td><fmt:formatDate pattern="dd/MM/yyyy"
 										value="${task.targetDate }" /></td>
 
-								<td>${task.done }</td>
+								<td><a href="/done-task?id=${task.id}"
+									class="${task.done ? "btn btn-light" : "btn btn-success" }">Done</a></td>
 
 								<td><form action="/update-task" method="POST"
 										class="allForm d-none">
